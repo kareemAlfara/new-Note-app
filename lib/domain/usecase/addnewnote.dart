@@ -25,7 +25,8 @@ class addNewNote extends StatelessWidget {
       builder: (context, state) {
         var cubit = AddnoteCubit.get(context);
         return SingleChildScrollView(
-          child: Form(
+          child:
+           Form(
             key: cubit.Formkey,
             child: Padding(
               padding: EdgeInsets.only(

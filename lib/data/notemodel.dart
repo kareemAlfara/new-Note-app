@@ -4,9 +4,9 @@ part 'notemodel.g.dart';
 @HiveType(typeId: 0)
 class Notemodel extends HiveObject {
   @HiveField(0)
-  final String Title;
+   String Title;
   @HiveField(1)
-  final String SubTitle;
+   String SubTitle;
   @HiveField(2)
   final String Date;
   @HiveField(3)

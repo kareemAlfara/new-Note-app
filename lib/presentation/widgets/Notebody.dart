@@ -11,7 +11,7 @@ class Notebody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => navigat(context, widget: editScreen()),
+      onTap: () => navigat(context, widget: editScreen(model: notemodel,)),
       child: Container(
         margin: EdgeInsets.all(8),
         padding: EdgeInsets.all(22),
@@ -26,7 +26,8 @@ class Notebody extends StatelessWidget {
               title: defulttext(data: notemodel.Title, fSize: 22),
               subtitle: defulttext(
                 data: notemodel.SubTitle,
-                fSize: 18,
+                fSize: 20,
+                fw: FontWeight.bold,
                 // color: Color(0xFF424242),
               ),
               trailing: IconButton(
@@ -34,7 +35,7 @@ class Notebody extends StatelessWidget {
                     notemodel.delete();
                               FetchCubit.get(context).fetchNote();
                 },
-                icon: Icon(Icons.delete, size: 36),
+                icon: Icon(Icons.delete, size: 36,color: Colors.redAccent,),
               ),
             ),
             defulttext(data: notemodel.Date, fSize: 20),
