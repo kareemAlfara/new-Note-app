@@ -5,6 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:noteapp/data/notemodel.dart';
 import 'package:noteapp/presentation/FetchNotecubit/fetch_cubit.dart';
+import 'package:noteapp/presentation/editingcubit/editing_cubit.dart';
 import 'package:noteapp/presentation/screens/noteScreen.dart';
 import 'package:noteapp/services/components.dart';
 import 'package:noteapp/services/theme_notifier.dart';
@@ -27,8 +28,11 @@ class myApp extends StatelessWidget {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
       builder: (context, themeMode, _) {
-        return BlocProvider(
-          create: (context) => FetchCubit()..fetchNote(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => FetchCubit()..fetchNote()),
+            BlocProvider(create: (context) => EditingCubit()),
+          ],
           child: MaterialApp(
             theme: ThemeData.light(),
             darkTheme: ThemeData.dark(),

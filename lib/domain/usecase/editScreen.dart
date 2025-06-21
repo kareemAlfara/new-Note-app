@@ -11,21 +11,21 @@ class editScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: noteAppbar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
+    return BlocProvider(
+      create: (context) => EditingCubit()..edinigMove(model),
+      child: Scaffold(
+        appBar: noteAppbar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios_new_rounded),
+          ),
+          text: "Editing",
+          icon: Icons.edit,
+          onPressed: () {},
         ),
-        text: "Editing",
-        icon: Icons.edit,
-        onPressed: () {},
-      ),
-      body: BlocProvider(
-        create: (context) => EditingCubit()..edinigMove(model),
-        child: BlocBuilder<EditingCubit, EditingState>(
+        body: BlocBuilder<EditingCubit, EditingState>(
           builder: (context, state) {
             var cubit = EditingCubit().get(context);
             return Form(
