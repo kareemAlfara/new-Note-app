@@ -1,17 +1,17 @@
 📝 new‑Note‑app
 A beautiful, simple, and powerful **note app** built using **Flutter**. This app helps you jot down thoughts, manage daily notes, and stay organized—all with a sleek, responsive UI and offline support.
 **🔍 Table of Contents :**
-#   - Features
+  - Features
 
-#   - Screenshots
+   - Screenshots
 
-#   - Tech Stack
+   - Tech Stack
  
-#   - Getting Started
+  - Getting Started
 
-#   - Project Structure
+   - Project Structure
 
-#   - License
+  - License
 
 
 
